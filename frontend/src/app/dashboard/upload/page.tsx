@@ -27,7 +27,7 @@ const UploadPage = () => {
     }
   }, [user, router]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     try {
@@ -61,7 +61,7 @@ const UploadPage = () => {
             required 
             className="w-full rounded-lg border border-zinc-300 px-4 py-2 focus:ring-indigo-500 focus:border-indigo-500"
             value={formData.title}
-            onChange={(e) => setFormData({...formData, title: e.target.value})}
+            onChange={(e: any) => setFormData({...formData, title: e.target.value})}
           />
         </div>
         
@@ -73,7 +73,7 @@ const UploadPage = () => {
               required 
               className="w-full rounded-lg border border-zinc-300 px-4 py-2 focus:ring-indigo-500 focus:border-indigo-500"
               value={formData.price}
-              onChange={(e) => setFormData({...formData, price: e.target.value})}
+              onChange={(e: any) => setFormData({...formData, price: e.target.value})}
             />
           </div>
           <div>
@@ -81,7 +81,7 @@ const UploadPage = () => {
             <select 
               className="w-full rounded-lg border border-zinc-300 px-4 py-2 focus:ring-indigo-500 focus:border-indigo-500"
               value={formData.category}
-              onChange={(e) => setFormData({...formData, category: e.target.value})}
+              onChange={(e: any) => setFormData({...formData, category: e.target.value})}
             >
               <option>Digital Art</option>
               <option>Oil Painting</option>
@@ -99,7 +99,7 @@ const UploadPage = () => {
             placeholder="https://example.com/image.jpg"
             className="w-full rounded-lg border border-zinc-300 px-4 py-2 focus:ring-indigo-500 focus:border-indigo-500"
             value={formData.image}
-            onChange={(e) => setFormData({...formData, image: e.target.value})}
+            onChange={(e: any) => setFormData({...formData, image: e.target.value})}
           />
         </div>
 
@@ -109,7 +109,7 @@ const UploadPage = () => {
             rows={4}
             className="w-full rounded-lg border border-zinc-300 px-4 py-2 focus:ring-indigo-500 focus:border-indigo-500"
             value={formData.description}
-            onChange={(e) => setFormData({...formData, description: e.target.value})}
+            onChange={(e: any) => setFormData({...formData, description: e.target.value})}
           ></textarea>
         </div>
 
@@ -119,7 +119,7 @@ const UploadPage = () => {
             id="useAI" 
             className="h-5 w-5 text-indigo-600 rounded"
             checked={formData.useAI}
-            onChange={(e) => setFormData({...formData, useAI: e.target.checked})}
+            onChange={(e: any) => setFormData({...formData, useAI: e.target.checked})}
           />
           <label htmlFor="useAI" className="text-sm text-indigo-900 font-medium flex items-center">
             <Sparkles className="h-4 w-4 mr-2 text-indigo-600" />

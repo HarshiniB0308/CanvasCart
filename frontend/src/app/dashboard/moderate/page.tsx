@@ -11,7 +11,7 @@ import { ShieldCheck, Clock, Check, X, History, Info } from 'lucide-react';
 const ModerationPage = () => {
   const { user } = useAuthStore();
   const router = useRouter();
-  const [artworks, setArtworks] = React.useState([]);
+  const [artworks, setArtworks] = React.useState<any[]>([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
   const fetchArtworks = async () => {
@@ -33,7 +33,7 @@ const ModerationPage = () => {
     fetchArtworks();
   }, [user, router]);
 
-  const handleModerate = async (id, status) => {
+  const handleModerate = async (id: string, status: string) => {
     try {
       await api.put(`/artworks/${id}/moderate`, { status });
       toast.success(`Artwork ${status} successfully`);

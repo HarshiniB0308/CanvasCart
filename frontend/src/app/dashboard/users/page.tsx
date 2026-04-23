@@ -10,7 +10,7 @@ import { Users, History, UserCheck, ShieldAlert } from 'lucide-react';
 const UsersManagementPage = () => {
   const { user } = useAuthStore();
   const router = useRouter();
-  const [users, setUsers] = React.useState([]);
+  const [users, setUsers] = React.useState<any[]>([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
@@ -64,7 +64,7 @@ const UsersManagementPage = () => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-zinc-100">
-                {users.map((u) => (
+                {users.map((u: any) => (
                   <tr key={u._id} className="hover:bg-zinc-50 transition-colors">
                     <td className="px-6 py-4 font-medium text-zinc-900">{u.name}</td>
                     <td className="px-6 py-4 text-zinc-600">{u.email}</td>
